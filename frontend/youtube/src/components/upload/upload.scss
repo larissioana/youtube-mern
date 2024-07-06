@@ -1,0 +1,68 @@
+.upload-container
+{
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .upload 
+    {
+        flex-direction: column;
+        display: flex;
+        padding: 0rem 1rem;
+        margin-top: 2rem;
+        gap: 1rem;
+        width: 600px;
+        label 
+        {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        input, textarea, button
+        {
+            width: 100%;
+            padding: .5rem;
+            background: none;
+            color: var(--fontColor);
+            border: 1px solid rgb(94, 92, 92);
+            border-radius: .3rem;
+        }
+
+        input, textarea:focus
+        {
+           outline: none;
+        }
+
+        button 
+        {
+            font-weight: bold; 
+            transition: background .3s ease-in;
+            cursor: pointer;
+
+            &:hover 
+            {
+                background-color:var(--fontColor);
+                color: #111;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+    .upload-container
+    {
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+
+        .upload 
+        {
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

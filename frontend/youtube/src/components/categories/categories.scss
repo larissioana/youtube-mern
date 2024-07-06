@@ -1,0 +1,34 @@
+.categories-container
+{
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    background-color: #0F0F0F;
+    position: sticky;
+    top: 4rem;
+    left: 0;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem;
+    overflow-x: auto;
+
+    button 
+    {
+        cursor: pointer;
+        transition: background .3s ease-in;
+        min-width: 8em;
+        border: none;
+        border-radius: .7rem;
+        font-weight: bold;
+        padding: .7rem;
+    }
+}
+
+@media screen and (max-width: 1068px)
+{
+    .categories-container
+    {
+        justify-content: flex-start;
+    }
+}

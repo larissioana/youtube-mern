@@ -1,0 +1,221 @@
+.profile-container
+{
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+    height: auto;
+    padding: 1rem 2rem;
+
+    .login 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        position: relative;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        padding: .5rem .7rem;
+        gap: .5rem;
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 3rem;
+        background: none;
+        border: 1px solid var(--borderColor);
+        color: var(--blueColor);
+}    
+
+    .profile-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        row-gap: 2rem;
+
+       
+
+        h1 
+        {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+        }
+
+        h3
+        {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+        }
+
+    .profile-img
+    {
+        width: 170px;
+        border: 1px solid var(--borderColor);
+        height: 170px;
+        border-radius: 50%;
+        
+        img 
+        {
+            width: 100%;
+            height: 100%;
+            clip-path: circle();
+            object-position: top;
+           
+        }
+    }
+
+    button 
+    {
+        border: none;
+        background: none;
+        color: var(--blueColor);
+        font-weight: bold;
+        font-size: clamp(.9rem, 2vw, 1rem);
+        cursor: pointer;
+    }
+
+    form
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 1rem;
+
+        .user-flex-container
+        {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--borderColor);
+            padding: .5rem;
+            width: 400px;
+            row-gap: .4rem;
+            font-size: 1rem;
+            border-radius: .4rem;
+            font-weight: bold;
+         
+            label 
+            {
+                color: var(--borderColor);
+            }
+
+            input 
+            {
+                background: none;
+                color: var(--fontColor);
+                border: none;
+                font-weight: bold;
+
+                &:focus
+                {
+                    outline: none;
+                }
+
+                
+            }
+        }
+
+        .profile-description 
+        {
+            margin-top: 3rem;
+            width: 500px;
+
+            p 
+            {
+                line-height: 1.4rem;
+
+                span 
+                {
+                    color: var(--blueColor);
+                }
+            }
+        }
+
+        .upload 
+        {
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+            margin-top: 1rem;
+            padding: .5rem;
+            border-radius: .3rem;
+            border: 1px solid var(--borderColor);
+        }
+    }
+}
+
+.upload-images-container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    width: 800px;
+    height: 500px;
+    padding: 1rem;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+}
+
+@media screen and (max-width: 815px)
+{
+    .profile-container
+    {
+        .upload-images-container
+        {
+            width: 500px;
+            overflow-y: auto;
+        }
+    }
+}
+@media screen and (max-width: 500px)
+{
+    .profile-container
+    {
+        .profile-wrapper
+        {
+            form 
+            {
+              
+                .user-flex-container
+                {
+                    width: 200px;
+                }
+
+                .profile-description
+                {
+                    max-width: 250px;
+                   
+                    p 
+                    {
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .upload-images-container
+        {
+            max-width: 350px;
+            width: 100%;
+
+        }
+    }
+}
+
+@media screen and (max-width: 360px )
+{
+    .profile-container
+    {
+        .upload-images-container
+        {
+            width: 250px
+        }
+    }
+}

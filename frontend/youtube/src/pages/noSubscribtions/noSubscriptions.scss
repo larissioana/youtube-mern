@@ -1,0 +1,39 @@
+.no-subscriptions
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+    gap: 1rem;
+    padding: 0rem 2rem;
+
+    .video-icon
+    {
+        font-size: 5rem;
+    }
+
+    h4
+    {
+        font-size: 1.2rem;
+    }
+
+    p 
+    {
+        font-size: 1.1rem;
+    }
+
+    button 
+    {
+        display: flex;
+        align-items: center;
+        padding: .5rem .7rem;
+        gap: .5rem;
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 3rem;
+        background: none;
+        border: 1px solid rgb(107, 105, 105);
+        color: var(--blueColor);
+    }
+}

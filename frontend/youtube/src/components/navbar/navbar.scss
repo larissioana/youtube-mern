@@ -1,0 +1,133 @@
+.navigation
+{
+    height: 4rem;
+    padding: 0rem 1rem;
+    display: flex;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:  #0F0F0F;
+    justify-content: space-between;
+    z-index: 3;
+
+    .burger 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .4rem;
+        cursor: pointer;
+        padding-right: 1rem;
+
+        div
+        {
+            width: 1.4rem;
+            height: 0.1rem;
+            background-color: var(--fontColor);
+            gap: 1rem;
+        }
+    }
+
+    .logo 
+    {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        cursor: pointer;
+
+        a
+        {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+        }
+
+        img 
+        {
+            border-radius: .5rem;
+        }
+    }
+
+    .center 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 2;
+    }
+
+    .login 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        position: relative;
+        gap: 1rem;
+
+        button 
+    {
+        display: flex;
+        align-items: center;
+        padding: .5rem .7rem;
+        gap: .5rem;
+        font-weight: bold;
+        border-radius: 3rem;
+        background: none;
+        border: 1px solid var(--borderColor);
+        color: var(--blueColor);
+    }
+
+        .video-icon 
+        {
+            cursor: pointer;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .video-popup 
+        {
+            position: absolute;
+            top: 5rem;
+            left: 0;
+        }
+        .user 
+        {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        
+        p 
+        {
+            text-transform: capitalize;
+        }
+
+        img
+        {
+            width: 2rem;
+            height: 2rem;
+            object-position: top;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        }   
+        .user-details 
+        {
+            position: absolute;
+            top: 4rem;
+            right: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    .navigation
+    {
+        .center
+        {
+            display: none;
+        }
+    }
+}

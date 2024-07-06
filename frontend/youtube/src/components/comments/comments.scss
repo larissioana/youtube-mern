@@ -1,0 +1,68 @@
+.comments-container
+{
+
+    .comments-flex-container
+            {
+                display: flex;
+                align-items: center;
+                margin-top: 2rem;
+                gap: 1rem;
+                width: 100%;
+                margin-bottom: 2rem;
+
+                img
+                {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    clip-path: circle();
+                }
+
+                input 
+                {
+                    background: none;
+                    color: inherit;
+                    border: none;
+                    width: 100%;
+                    border-bottom: 1px solid rgb(148, 145, 145);
+                    padding-bottom: .5rem;
+
+                    &::placeholder
+                    {
+                        color: #c8c4c4;
+                        font-size: .9rem;
+                    }
+
+                    &:focus
+                    {
+                        outline: none;
+                    }
+                }
+            }
+            form 
+            {
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+                width: 100%;
+                flex-wrap: wrap;
+
+                button 
+                {
+                    background-color: var(--blueColor);
+                    padding: .6rem 1rem;
+                    border: none;
+                    width: 7rem;
+                    cursor: pointer;
+                    border-radius: 1rem;
+                    font-weight: bold;
+                    transition: background .5s ease-in;
+                }
+            }
+
+            .comments 
+            {
+                margin-top: 3rem;
+                height: auto;
+                width: 100%;
+            }
+}

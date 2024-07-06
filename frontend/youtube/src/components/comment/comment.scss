@@ -1,0 +1,36 @@
+.comment-container
+{
+    display: flex;
+    row-gap: 2rem;
+    .comment-flex-container
+    {
+        display: flex;
+        align-items: flex-end;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        img 
+        {
+            width: 3.5rem;
+            height: 3.5rem;
+            clip-path: circle();
+        }
+
+        h4 
+        {
+            text-transform: capitalize;
+
+            span 
+            {
+                margin-left: 1rem;
+                font-size: .9rem;
+                color: rgb(185, 184, 184);
+            }
+        }
+
+        p 
+        {
+            margin-top: .1rem;
+        }
+    }
+}

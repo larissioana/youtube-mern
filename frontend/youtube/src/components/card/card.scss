@@ -1,0 +1,36 @@
+.card-container
+{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+.videos-right
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: .8rem;
+
+    .link 
+    {
+        min-width: 300px;
+        max-width: 100%;
+    }
+
+    .views-container
+    {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+    }
+    .channel-flex
+    {
+        display: flex;
+        gap: .7rem;
+        align-items: center;
+    .channel-img
+    {
+        clip-path: circle();
+    }
+}
+}
+}

@@ -1,0 +1,38 @@
+.shorter-sidebar-container
+{
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 5rem;
+    height: 100vh;
+    background-color: rgb(16, 15, 15);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 6rem;
+    row-gap: 3rem;
+    padding: 1rem;
+
+    
+    a 
+    {
+        font-size: .9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .4rem;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .shorter-sidebar-container
+    {
+        display: none;
+    }
+}

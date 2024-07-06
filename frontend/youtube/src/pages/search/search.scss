@@ -1,0 +1,38 @@
+.searched-videos-container
+{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 3rem;
+    margin-left:  14rem;
+    padding: 1rem;
+
+    h2 
+    {
+      text-align: center;
+    }
+}
+
+.mobile-search-bar
+{
+    display: none;
+}
+
+@media screen and (max-width: 800px)
+{
+    .mobile-search-bar
+    {
+        display: flex;
+        padding: 1rem;
+        margin-top: 7rem;
+    }
+}
+@media screen and (max-width: 1000px)
+{
+    .searched-videos-container
+    {
+        margin-left: 1rem;
+    }
+}
