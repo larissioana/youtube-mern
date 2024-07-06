@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-    baseURL: "http://localhost:3003/api",
+    baseURL: "https://youtube-mern-brown.vercel.app",
     withCredentials: true
 });
