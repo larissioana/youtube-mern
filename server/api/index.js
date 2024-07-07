@@ -7,6 +7,7 @@ import videoRoutes from "../routes/videos.js";
 import commentRoutes from "../routes/comments.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import helmet from "helmet";
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,16 @@ app.use(cors({
 	origin: 'http://localhost:5173',
 	credentials: true
 }));
+app.use(helmet({
+	contentSecurityPolicy: {
+		directives: {
+			defaultSrc: ["'self'"],
+			scriptSrc: ["'self'"],
+			objectSrc: ["'none'"]
+		}
+	}
+}));
+
 
 
 const connect = async () => {
