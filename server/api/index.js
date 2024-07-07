@@ -7,15 +7,15 @@ import videoRoutes from "../routes/videos.js";
 import commentRoutes from "../routes/comments.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import helmet from "helmet";
 
 dotenv.config();
 const app = express();
-app.use(
-	helmet({
-		contentSecurityPolicy: false,
-	})
-);
+
+app.use((req, res, next) => {
+	res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; object-src 'none';");
+	next();
+});
+
 
 app.use(cors({
 	origin: 'http://localhost:5173',
