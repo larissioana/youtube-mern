@@ -11,12 +11,6 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 
-app.use((req, res, next) => {
-	res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; object-src 'none';");
-	next();
-});
-
-
 app.use(cors({
 	origin: 'http://localhost:5173',
 	credentials: true
@@ -34,6 +28,17 @@ const connect = async () => {
 
 app.use(express.json());
 app.use(cookieParser());
+app.use((req, res, next) => {
+	if (req.originalUrl === '/favicon.ico') {
+		return res.status(204).end();
+	}
+	next();
+});
+app.use((req, res, next) => {
+	res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self'; object-src 'none';");
+	next();
+});
+
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
