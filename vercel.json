@@ -1,0 +1,24 @@
+{
+    "projects": [
+      {
+        "src": "./frontend",
+        "buildCommand": "npm run build",
+        "outputDirectory": "./frontend/dist",
+        "routes": [
+          {
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+          },
+          {
+            "src": "/(.*)",
+            "dest": "/"
+          }
+        ]
+      },
+      {
+        "src": "./server",
+        "buildCommand": "npm install",
+        "outputDirectory": "./server"
+      }
+    ]
+  }
