@@ -8,8 +8,14 @@ import commentRoutes from "../routes/comments.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-const app = express();
 dotenv.config();
+const app = express();
+
+app.use(cors({
+	origin: 'http://localhost:5173',
+	credentials: true
+}));
+
 
 const connect = async () => {
 	try {
@@ -20,15 +26,10 @@ const connect = async () => {
 	}
 };
 
-app.use(cors({
-	origin: 'https://youtube-mern-three.vercel.app',
-	credentials: true
-}));
+
 app.use(express.json());
 app.use(cookieParser());
-app.use("/", (req, res) => {
-	res.send("hello")
-})
+
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/videos", videoRoutes);
@@ -44,7 +45,7 @@ app.use((err, req, res, next) => {
 	})
 });
 const PORT = process.env.PORT || 3003;
-app.listen(PORT, async () => {
+app.listen(3003, async () => {
 	await connect();
 	console.log("Server is running on port 3003")
 });
