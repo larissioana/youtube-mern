@@ -21,7 +21,7 @@ const connect = async () => {
 };
 
 app.use(cors({
-	origin: 'https://youtube-mern-server.vercel.app',
+	origin: 'https://youtube-mern-three.vercel.app',
 	credentials: true
 }));
 app.use(express.json());
@@ -43,8 +43,8 @@ app.use((err, req, res, next) => {
 		message
 	})
 });
-
-app.listen("https://youtube-mern-server.vercel.app", async () => {
+const PORT = process.env.PORT || 3003;
+app.listen(PORT, async () => {
 	await connect();
 	console.log("Server is running on port 3003")
 });
