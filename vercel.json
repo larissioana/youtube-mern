@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "routes": [
+      { "src": "/api/users", "dest": "/index.js" },
+      { "src": "/api/auth", "dest": "/index.js" },
+      { "src": "/api/videos", "dest": "/index.js" },
+      { "src": "/api/comments", "dest": "/index.js" },
+      { "handle": "filesystem" }
+    ]
+  }
+  
