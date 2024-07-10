@@ -1,10 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import userRoutes from "../routes/users.js";
-import authRoutes from "../routes/auth.js";
-import videoRoutes from "../routes/videos.js";
-import commentRoutes from "../routes/comments.js";
+import userRoutes from "./routes/users.js";
+import authRoutes from "./routes/auth.js";
+import videoRoutes from "./routes/videos.js";
+import commentRoutes from "./routes/comments.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -28,17 +28,6 @@ const connect = async () => {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use((req, res, next) => {
-	if (req.originalUrl === '/favicon.ico') {
-		return res.status(204).end();
-	}
-	next();
-});
-app.use((req, res, next) => {
-	res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self'; object-src 'none';");
-	next();
-});
-
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
