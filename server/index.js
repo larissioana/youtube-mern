@@ -15,13 +15,15 @@ app.use(cors({
 	origin: 'http://localhost:5173',
 	credentials: true
 }));
-
 const connect = async () => {
 	try {
-		await mongoose.connect(process.env.MONGO)
-		console.log("Connected to MongoDB")
+		await mongoose.connect(process.env.MONGO, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		});
+		console.log("Connected to MongoDB");
 	} catch (error) {
-		console.error(error)
+		console.error(error);
 	}
 };
 
