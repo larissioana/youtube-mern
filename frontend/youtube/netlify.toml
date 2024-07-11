@@ -1,9 +1,0 @@
-[build]
-  base = "frontend/youtube"
-  publish = "frontend/youtube/dist"
-  command = "npm run build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
