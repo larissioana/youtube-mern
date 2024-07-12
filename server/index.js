@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-	origin: 'https://youtube-mern-git-main-larissioanas-projects.vercel.app/',
+	origin: 'https://youtube-mern-git-main-larissioanas-projects.vercel.app',
 	credentials: true
 }));
 const connect = async () => {
