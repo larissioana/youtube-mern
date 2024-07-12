@@ -221,10 +221,6 @@ const Videos = () => {
                                     </div>
                                     <Comments currentUser={currentUser} videoId={currentVideo?._id} />
                                 </div>
-                                <div className="right">
-                                    <h1>reccommendations</h1>
-                                </div>
-
                             </div>
                         </div>
                         {
