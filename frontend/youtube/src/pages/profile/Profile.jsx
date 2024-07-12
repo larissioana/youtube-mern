@@ -26,7 +26,7 @@ const Profile = () => {
     const [isImgOpen, setIsImgOpen] = useState(false);
     const [imgPerc, setImgPerc] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
-    console.log({ currentUser })
+
     const dispatch = useDispatch();
     const storage = getStorage(app);
 

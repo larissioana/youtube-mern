@@ -27,6 +27,12 @@ const connect = async () => {
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Route all other requests to index.html
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
