@@ -31,11 +31,13 @@ export const signin = async (req, res, next) => {
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         const { password, ...otherDetails } = user._doc;
+        const isProduction = process.env.NODE_ENV === 'production';
+
         res.cookie("access_token", token, {
-            httpOnly: false,
-            secure: true,
-            sameSite: "strict",
-        }).status(200).json(otherDetails)
+            httpOnly: true,
+            secure: isProduction,
+            sameSite: isProduction ? "strict" : "lax",
+        }).status(200).json(otherDetails);
     } catch (err) {
         next(err)
     }
