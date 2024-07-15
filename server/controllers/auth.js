@@ -32,11 +32,12 @@ export const signin = async (req, res, next) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         const { password, ...otherDetails } = user._doc;
         const isProduction = process.env.NODE_ENV === 'production';
-
+        console.log(isProduction)
+        console.log(process.env.NODE_ENV)
         res.cookie("access_token", token, {
             httpOnly: true,
-            secure: isProduction,
-            sameSite: isProduction ? "strict" : "lax",
+            secure: true,
+            sameSite: "strict"
         }).status(200).json(otherDetails);
     } catch (err) {
         next(err)
