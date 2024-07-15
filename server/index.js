@@ -7,6 +7,7 @@ import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path"
 
 dotenv.config();
 const app = express();
