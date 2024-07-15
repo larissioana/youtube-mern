@@ -7,7 +7,6 @@ import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import path from "path"
 
 dotenv.config();
 const app = express();
@@ -30,19 +29,11 @@ const connect = async () => {
 
 app.use(express.json());
 app.use(cookieParser());
-const frontendPath = path.join(__dirname, '../frontend/youtube/dist');
-app.use(express.static(frontendPath));
-
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
-
-app.get('*', (req, res) => {
-	res.sendFile(path.join(frontendPath, 'index.html'));
-});
-
 
 app.use((err, req, res, next) => {
 	const status = err.status || 500;
