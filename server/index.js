@@ -15,6 +15,7 @@ app.use(cors({
 	origin: 'https://youtube-mern-git-main-larissioanas-projects.vercel.app',
 	credentials: true
 }));
+
 const connect = async () => {
 	try {
 		await mongoose.connect(process.env.MONGO);
@@ -23,7 +24,6 @@ const connect = async () => {
 		console.error(error);
 	}
 };
-
 
 app.use(express.json());
 app.use(cookieParser());
