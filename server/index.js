@@ -17,6 +17,8 @@ app.use(cors({
 	credentials: true
 }));
 
+
+
 const connect = async () => {
 	try {
 		await mongoose.connect(process.env.MONGO);
@@ -28,14 +30,19 @@ const connect = async () => {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../frontend/youtube/dist/index.html')));
+const frontendPath = path.join(__dirname, '../frontend/youtube/dist');
+app.use(express.static(frontendPath));
+
+
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
+
 app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, '../frontend/youtube/dist/index.html'));
+	res.sendFile(path.join(frontendPath, 'index.html'));
 });
+
 
 app.use((err, req, res, next) => {
 	const status = err.status || 500;
