@@ -6,7 +6,7 @@ import { axiosInstance } from "../../utils/axios";
 import FeedCard from "../../components/feedCard/FeedCard";
 
 
-const FeedSubscriptions = () => {
+const FeedSubscriptions = ({ isSidebarOpen }) => {
     const [videos, setVideos] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 

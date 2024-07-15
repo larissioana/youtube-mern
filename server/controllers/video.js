@@ -52,8 +52,8 @@ export const getVideo = async (req, res, next) => {
 
         const updatedVideo = await Video.findByIdAndUpdate(
             videoId,
-            { $inc: { views: 1 } },
-            { new: true }
+            // { $inc: { views: 1 } },
+            // { new: true }    
         );
 
         if (!updatedVideo) {
@@ -136,6 +136,16 @@ export const getSportsVideos = async (req, res, next) => {
         next(err);
     }
 };
+
+export const getFashionVideos = async (req, res, next) => {
+    try {
+        const videos = await Video.find({ category: 'fashion' });
+        res.status(200).json(videos);
+    } catch (err) {
+        next(err);
+    }
+};
+
 
 export const getCodingVideos = async (req, res, next) => {
     try {

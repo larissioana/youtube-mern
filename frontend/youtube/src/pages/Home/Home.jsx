@@ -36,7 +36,7 @@ const Home = ({ type }) => {
         }
     };
 
-    const filteredVideos = filteredVideosByCategory();
+    //const filteredVideos = filteredVideosByCategory();
     const handleHover = (id, isHovered) => {
         setVideos(prevVideos =>
             prevVideos.map(video =>
@@ -50,10 +50,9 @@ const Home = ({ type }) => {
             {
                 !isLoading ?
                     <>
-                        <Categories selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
                         <div className="home-container">
                             {
-                                filteredVideos?.map((video) => {
+                                videos?.map((video) => {
                                     return <FeedCard key={video._id} handleHover={handleHover} video={video} showInfo={true} />
                                 })
                             }

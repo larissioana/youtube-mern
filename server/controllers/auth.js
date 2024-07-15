@@ -34,8 +34,7 @@ export const signin = async (req, res, next) => {
         res.cookie("access_token", token, {
             httpOnly: true,
             secure: true,
-            sameSite: "strict",
-            domain: "https://youtube-mern-git-main-larissioanas-projects.vercel.app"
+            sameSite: "none",
 
         }).status(200).json(otherDetails);
     } catch (err) {

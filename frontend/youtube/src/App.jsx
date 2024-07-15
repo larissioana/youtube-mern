@@ -52,6 +52,7 @@ function App() {
               <Route path="science" element={<Home type="science" />} />
               <Route path="movies" element={<Home type="movies" />} />
               <Route path="coding" element={<Home type="coding" />} />
+              <Route path="fashion" element={<Home type="fashion" />} />
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<SignUp />} />
               <Route path="feed/subscriptions" element={<FeedSubscriptions isSidebarOpen={isSidebarOpen} />} />

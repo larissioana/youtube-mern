@@ -10,6 +10,7 @@ import SportsBaseballIcon from '@mui/icons-material/SportsBaseball';
 import MovieIcon from '@mui/icons-material/Movie';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import LaptopIcon from '@mui/icons-material/Laptop';
+import DiamondIcon from '@mui/icons-material/Diamond';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { axiosInstance } from '../../utils/axios';
@@ -122,6 +123,10 @@ const Sidebar = () => {
                 <div className="flex-container">
                     <LaptopIcon />
                     <Link to="/coding">Coding</Link>
+                </div>
+                <div className="flex-container">
+                    <DiamondIcon />
+                    <Link to="/fashion">Fashion</Link>
                 </div>
             </div>
         </div>

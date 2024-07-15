@@ -11,11 +11,19 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 
+
 app.use(cors({
 	origin: 'https://youtube-mern-git-main-larissioanas-projects.vercel.app',
 	credentials: true
 }));
 
+
+/*
+app.use(cors({
+	origin: 'http://localhost:5173',
+	credentials: true
+}))
+*/
 const connect = async () => {
 	try {
 		await mongoose.connect(process.env.MONGO);

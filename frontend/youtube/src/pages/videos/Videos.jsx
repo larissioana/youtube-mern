@@ -63,6 +63,7 @@ const Videos = () => {
             try {
                 setIsLoading(true);
                 const videoRes = await axiosInstance.get(`/videos/find/${id}`);
+                console.log({ videoRes })
                 const channelRes = await axiosInstance.get(
                     `/users/find/${videoRes.data.userId}`
                 );

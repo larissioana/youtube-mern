@@ -1,12 +1,22 @@
 import './categories.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Categories = ({ selectedCategory, setSelectedCategory }) => {
+    const navigate = useNavigate();
+
+    const handleCategories = (type) => {
+        if (selectedCategory === 'all') {
+            navigate('/');
+
+        }
 
 
-    const handleCategories = (category) => {
-        setSelectedCategory(category)
+        navigate(`/${type}`);
+
+        setSelectedCategory(type)
+
     };
-
+    console.log(selectedCategory)
     const getButtonStyle = (category) => {
         return {
             color: selectedCategory === category ? "var(--bg)" : "var(--fontColor)",
@@ -16,12 +26,7 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => {
 
     return (
         <div className="categories-container">
-            <button
-                onClick={() => handleCategories("all")}
-                style={getButtonStyle("all")}
-            >
-                All
-            </button>
+
             <button
                 style={getButtonStyle("coding")}
                 onClick={() => handleCategories("coding")}
