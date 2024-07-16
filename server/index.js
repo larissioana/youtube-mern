@@ -7,6 +7,7 @@ import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import helmet from 'helmet'
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,18 @@ app.use(cors({
 	credentials: true
 }));
 
+app.use(helmet({
+	contentSecurityPolicy: {
+		directives: {
+			defaultSrc: ["'self'"],
+			scriptSrc: ["'self'", "https://youtube-mern.netlify.app"],
+			scriptSrcElem: ["'self'", "https://youtube-mern.netlify.app"],
+			imgSrc: ["'self'", "https://youtube-mern.netlify.app", "data:"],
+			styleSrc: ["'self'", "https://youtube-mern.netlify.app"],
+			connectSrc: ["'self'", "https://youtube-mern-server.vercel.app"],
+		}
+	}
+}));
 
 const connect = async () => {
 	try {
