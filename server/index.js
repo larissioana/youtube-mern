@@ -29,10 +29,17 @@ const connect = async () => {
 app.use(express.json());
 app.use(cookieParser());
 
+const frontendPath = path.resolve(__dirname, '../frontend/youtube/dist');
+app.use(express.static(frontendPath));
+
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
+
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(frontendPath, 'index.html'));
+});
 
 app.use((err, req, res, next) => {
 	const status = err.status || 500;
