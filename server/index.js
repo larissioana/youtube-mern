@@ -17,7 +17,6 @@ app.use(cors({
 }));
 
 
-
 const connect = async () => {
 	try {
 		await mongoose.connect(process.env.MONGO);
@@ -44,7 +43,7 @@ app.use((err, req, res, next) => {
 		message
 	})
 });
-const PORT = process.env.PORT || 3003;
+
 app.listen(3003, async () => {
 	await connect();
 	console.log("Server is running on port 3003")
